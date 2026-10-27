@@ -1,0 +1,13 @@
+{
+  "name": "Dev Codespace + Claude Code",
+  "image": "://microsoft.com",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.codespaces",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code"
+}
