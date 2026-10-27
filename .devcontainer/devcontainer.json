@@ -1,13 +1,27 @@
 {
-  "name": "Dev Codespace + Claude Code",
-  "image": "://microsoft.com",
+  "name": "config-templates",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "secrets": {
+    "NETBOX_URL": {
+      "description": "URL base de tu NetBox, ej. https://netbox.tuempresa.com (sin /api)"
+    },
+    "NETBOX_TOKEN": {
+      "description": "API token de NetBox con permisos de lectura/escritura sobre dcim y extras"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
-        "GitHub.codespaces",
-        "dbaeumer.vscode-eslint"
+        "ms-python.python",
+        "samuelcolvin.jinjahtml",
+        "redhat.vscode-yaml",
+        "anthropic.claude-code"
       ]
     }
-  },
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code"
+  }
 }
